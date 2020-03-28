@@ -12,9 +12,25 @@ def fib(max=10):
         yield a
         a, b = b, a + b
 
-print(sum(i for i in fib(10000000) if i % 2 == 0))
+for i in range(1, 501):
+    print(i, ":", fib(i))
+# print(sum(i for i in fib(10000000) if i % 2 == 0))
 # This is the probably the most efficient solution
 
+
+# another way of doing this is using functools module's lru_cache decorator 
+# from functools import lru_cache #! LRU stands for Least recently used cache.
+
+# @lru_cache(maxsize = 1000)  #! Default value is 128
+# def fibonacci(n):
+#     if n == 1:
+#         return 1
+#     elif n == 2:
+#         return 1
+#     elif n > 2:
+#         return fibonacci(n-1) + fibonacci(n-2)
+# for i in range(1, 501):
+#     print(i, ":", fibonacci(i))
 # Some other forms of fibonacci series 
 # def fibonacci(n):
 
